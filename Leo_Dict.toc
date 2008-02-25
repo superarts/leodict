@@ -1,0 +1,6 @@
+## Interface: 20300
+## Title: Leo Dict
+## Notes: a simple build-in command-line English-Chinese Dictionary.
+## OptionalDeps:
+## Dependencies:
+leo_dict.xml 
