@@ -1,6 +1,6 @@
 ## Interface: 20300
 ## Title: Leo Dict
-## Notes: a simple build-in command-line English-Chinese Dictionary.
+## Notes: Leo Dictionary: A simple build-in command-line English-Chinese dictionary. http://hi.baidu.com/doctordoom
 ## OptionalDeps:
 ## Dependencies:
 leo_dict.xml 
