@@ -22,4 +22,8 @@ function message(m)
 	print(m);
 end
 
-leo_dict_cmd(dict_data);
+test = {};
+test['test'] = 'my file';
+
+leo_dict_cmd(test['test']);
+
