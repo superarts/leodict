@@ -1,0 +1,4 @@
+#!/bin/bash
+gcc idx2lua.c -Wall -o idx2lua
+chmod +x idx2lua
+./idx2lua
