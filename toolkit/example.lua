@@ -1,5 +1,5 @@
 function ld_init()
-	f = io.open('longdao_enus2zhcn.txt');
+	f = io.open('../dict/longdao_enus2zhcn.txt');
 	s = f:read('*all');
 	f:close();
 end
