@@ -46,7 +46,7 @@
 		<Layers>
 			<layer>
 
-				<FontString name="leo_dict_data" inherits="GameFontNormal" text="Usage: /ld word or phrase">
+				<FontString name="leo_dict_data" inherits="GameFontNormalLarge" text="Usage: /ld word or phrase">
 					<Size>
 						<AbsDimension x="0" y="0" />
 					</Size>
