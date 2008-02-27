@@ -1,5 +1,3 @@
---	dict_name = '/usr/share/stardict/dic/stardict-langdao-ec-gb-2.4.2/langdao-ec-gb.idx';
-
 function leo_dict_init()
 	--	init dictionary: io library not allowed in wow, disabled
 	if false then
@@ -8,6 +6,7 @@ function leo_dict_init()
 		f:close();
 	end;
 
+	--	setup command binding
 	SlashCmdList["LEODICT"] = leo_dict_cmd;
 	SLASH_LEODICT1 = "/leodict";
 	SLASH_LEODICT2 = "/ld";
@@ -18,12 +17,12 @@ function leo_dict_cmd(msg)
 	message(msg .. ': ' .. meaning);
 end 
 
-if true then
+--	for local testing
+if false then
 	function message(m)
 		print(m);
 	end
 
-	--	testing code
 	require("dict/longdao_enus2zhcn");
 	SlashCmdList = {};
 	leo_dict_init();
