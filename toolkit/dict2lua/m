@@ -1,0 +1,27 @@
+#!/bin/bash
+
+dict_path=/usr/share/stardict/dic
+# dict_name=langdao-ec-gb
+# dict_name=dictd_www.dict.org_gcide
+dict_name=dictd_www.dict.org_wn
+dict_ver=2.4.2
+dict_pre=stardict
+
+echo ----extract dict txt file
+gunzip -dc $dict_path/$dict_pre-$dict_name-$dict_ver/$dict_name.dict.dz > $dict_name.txt
+
+echo ----compile dict2lua
+rm dict2lua
+gcc dict2lua.c -Wall -o dict2lua
+chmod +x dict2lua
+
+echo ----generate dict lua file
+./dict2lua dict_data \
+	$dict_path/$dict_pre-$dict_name-$dict_ver/$dict_name.idx \
+	$dict_name.txt > $dict_name.lua
+#	$dict_path/$dict_pre-$dict_name-$dict_ver/$dict_name.txt > $dict_name.lua
+
+echo ----export $dict_name.lua
+mv $dict_name.lua ../../dict/
+ls -l ../../dict/
+
