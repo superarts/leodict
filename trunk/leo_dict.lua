@@ -1,11 +1,4 @@
 function leo_dict_init()
-	--	init dictionary: io library not allowed in wow, disabled
-	if false then
-		f = io.open('dict/longdao_enus2zhcn.txt');
-		dict_data = f:read('*all');
-		f:close();
-	end;
-
 	--	setup command binding
 	SlashCmdList["LEODICT"] = leo_dict_cmd;
 	SLASH_LEODICT1 = "/leodict";
@@ -21,7 +14,7 @@ function leo_dict_cmd(msg)
 		_, _, _, meaning = string.find(dict_data, '\t(' .. msg .. ')\t\n(.-)\t\n');
 
 		if meaning ~= nil then
-			s = msg .. ': ' .. meaning;
+			s = '- ' .. msg .. ' -\n' .. meaning;
 		else
 			s = 'Not found: ' .. msg;
 		end
@@ -30,15 +23,3 @@ function leo_dict_cmd(msg)
 		--	message(msg .. ': ' .. meaning);
 	end
 end 
-
---	for local testing
-if false then
-	function message(m)
-		print(m);
-	end
-
-	require("dict/longdao_enus2zhcn");
-	SlashCmdList = {};
-	leo_dict_init();
-	leo_dict_cmd('test');
-end
